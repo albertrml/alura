@@ -18,6 +18,11 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: 18.
-    - run: npm install
-    - run: npm build
-    - run: npm test
+        
+    - name: Instalar dependências
+      run: npm install
+      working-directory: devops/allbooks
+      
+    - name: executar testes
+      run: npm test
+      working-directory: devops/allbooks
